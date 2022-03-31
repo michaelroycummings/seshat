@@ -1,0 +1,182 @@
+22-03-23 20:16:58 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBybit.get_next_funding_rate at 0x000001B07BD72DC0>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_bybit.py", line 88, in get_next_funding_rate
+    url = f'{self.bybit_url}/v2/private/funding/predicted-funding'
+AttributeError: 'CommsBybit' object has no attribute 'bybit_url'
+22-03-23 20:16:58 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBybit.get_next_funding_rate at 0x000001B07BD72DC0>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_bybit.py", line 88, in get_next_funding_rate
+    url = f'{self.bybit_url}/v2/private/funding/predicted-funding'
+AttributeError: 'CommsBybit' object has no attribute 'bybit_url'
+22-03-23 20:16:59 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBybit.get_next_funding_rate at 0x000001B07BD72DC0>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_bybit.py", line 88, in get_next_funding_rate
+    url = f'{self.bybit_url}/v2/private/funding/predicted-funding'
+AttributeError: 'CommsBybit' object has no attribute 'bybit_url'
+22-03-23 20:17:01 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBybit.get_next_funding_rate at 0x000001B07BD72DC0>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_bybit.py", line 88, in get_next_funding_rate
+    url = f'{self.bybit_url}/v2/private/funding/predicted-funding'
+AttributeError: 'CommsBybit' object has no attribute 'bybit_url'
+22-03-23 20:17:03 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBybit.get_next_funding_rate at 0x000001B07BD72DC0>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_bybit.py", line 88, in get_next_funding_rate
+    url = f'{self.bybit_url}/v2/private/funding/predicted-funding'
+AttributeError: 'CommsBybit' object has no attribute 'bybit_url'
+22-03-23 20:17:03 	 CRITICAL 	 utils.py - try5times_wrapper: 	 <function CommsBybit.get_next_funding_rate at 0x000001B07BD72DC0> failed to work after 5 attempts.
+22-03-24 01:04:20 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBybit.get_historical_funding_rates at 0x000001E7B64B3670>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_bybit.py", line 156, in get_historical_funding_rates
+    pair_rates = {datetime.fromtimestamp(int(d['fundingTime'])/1000): float(d['funding_rate']) for d in data}  # in case they one day give more than 1 result
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_bybit.py", line 156, in <dictcomp>
+    pair_rates = {datetime.fromtimestamp(int(d['fundingTime'])/1000): float(d['funding_rate']) for d in data}  # in case they one day give more than 1 result
+TypeError: string indices must be integers
+22-03-24 01:04:21 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBybit.get_historical_funding_rates at 0x000001E7B64B3670>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_bybit.py", line 156, in get_historical_funding_rates
+    pair_rates = {datetime.fromtimestamp(int(d['fundingTime'])/1000): float(d['funding_rate']) for d in data}  # in case they one day give more than 1 result
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_bybit.py", line 156, in <dictcomp>
+    pair_rates = {datetime.fromtimestamp(int(d['fundingTime'])/1000): float(d['funding_rate']) for d in data}  # in case they one day give more than 1 result
+TypeError: string indices must be integers
+22-03-24 01:04:23 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBybit.get_historical_funding_rates at 0x000001E7B64B3670>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_bybit.py", line 156, in get_historical_funding_rates
+    pair_rates = {datetime.fromtimestamp(int(d['fundingTime'])/1000): float(d['funding_rate']) for d in data}  # in case they one day give more than 1 result
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_bybit.py", line 156, in <dictcomp>
+    pair_rates = {datetime.fromtimestamp(int(d['fundingTime'])/1000): float(d['funding_rate']) for d in data}  # in case they one day give more than 1 result
+TypeError: string indices must be integers
+22-03-24 01:04:26 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBybit.get_historical_funding_rates at 0x000001E7B64B3670>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_bybit.py", line 156, in get_historical_funding_rates
+    pair_rates = {datetime.fromtimestamp(int(d['fundingTime'])/1000): float(d['funding_rate']) for d in data}  # in case they one day give more than 1 result
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_bybit.py", line 156, in <dictcomp>
+    pair_rates = {datetime.fromtimestamp(int(d['fundingTime'])/1000): float(d['funding_rate']) for d in data}  # in case they one day give more than 1 result
+TypeError: string indices must be integers
+22-03-24 01:04:28 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBybit.get_historical_funding_rates at 0x000001E7B64B3670>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_bybit.py", line 156, in get_historical_funding_rates
+    pair_rates = {datetime.fromtimestamp(int(d['fundingTime'])/1000): float(d['funding_rate']) for d in data}  # in case they one day give more than 1 result
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_bybit.py", line 156, in <dictcomp>
+    pair_rates = {datetime.fromtimestamp(int(d['fundingTime'])/1000): float(d['funding_rate']) for d in data}  # in case they one day give more than 1 result
+TypeError: string indices must be integers
+22-03-24 01:04:28 	 CRITICAL 	 utils.py - try5times_wrapper: 	 <function CommsBybit.get_historical_funding_rates at 0x000001E7B64B3670> failed to work after 5 attempts.
+22-03-24 01:05:14 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBybit.get_historical_funding_rates at 0x000001E6AEC63670>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_bybit.py", line 156, in get_historical_funding_rates
+    pair_rates = {datetime.fromtimestamp(int(d['fundingTime'])/1000): float(d['funding_rate']) for d in data}  # in case they one day give more than 1 result
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_bybit.py", line 156, in <dictcomp>
+    pair_rates = {datetime.fromtimestamp(int(d['fundingTime'])/1000): float(d['funding_rate']) for d in data}  # in case they one day give more than 1 result
+TypeError: string indices must be integers
+22-03-24 01:05:15 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBybit.get_historical_funding_rates at 0x000001E6AEC63670>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_bybit.py", line 156, in get_historical_funding_rates
+    pair_rates = {datetime.fromtimestamp(int(d['fundingTime'])/1000): float(d['funding_rate']) for d in data}  # in case they one day give more than 1 result
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_bybit.py", line 156, in <dictcomp>
+    pair_rates = {datetime.fromtimestamp(int(d['fundingTime'])/1000): float(d['funding_rate']) for d in data}  # in case they one day give more than 1 result
+TypeError: string indices must be integers
+22-03-24 01:05:57 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBybit.get_historical_funding_rates at 0x000001CEF49D4670>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_bybit.py", line 156, in get_historical_funding_rates
+    pair_rates = {datetime.fromtimestamp(int(d['funding_rate_timestamp'])/1000): float(d['funding_rate']) for d in data}  # in case they one day give more than 1 result
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_bybit.py", line 156, in <dictcomp>
+    pair_rates = {datetime.fromtimestamp(int(d['funding_rate_timestamp'])/1000): float(d['funding_rate']) for d in data}  # in case they one day give more than 1 result
+TypeError: string indices must be integers
+22-03-24 01:05:58 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBybit.get_historical_funding_rates at 0x000001CEF49D4670>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_bybit.py", line 156, in get_historical_funding_rates
+    pair_rates = {datetime.fromtimestamp(int(d['funding_rate_timestamp'])/1000): float(d['funding_rate']) for d in data}  # in case they one day give more than 1 result
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_bybit.py", line 156, in <dictcomp>
+    pair_rates = {datetime.fromtimestamp(int(d['funding_rate_timestamp'])/1000): float(d['funding_rate']) for d in data}  # in case they one day give more than 1 result
+TypeError: string indices must be integers
+22-03-24 01:05:59 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBybit.get_historical_funding_rates at 0x000001CEF49D4670>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_bybit.py", line 156, in get_historical_funding_rates
+    pair_rates = {datetime.fromtimestamp(int(d['funding_rate_timestamp'])/1000): float(d['funding_rate']) for d in data}  # in case they one day give more than 1 result
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_bybit.py", line 156, in <dictcomp>
+    pair_rates = {datetime.fromtimestamp(int(d['funding_rate_timestamp'])/1000): float(d['funding_rate']) for d in data}  # in case they one day give more than 1 result
+TypeError: string indices must be integers
+22-03-24 01:06:03 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBybit.get_historical_funding_rates at 0x000001CEF49D4670>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_bybit.py", line 156, in get_historical_funding_rates
+    pair_rates = {datetime.fromtimestamp(int(d['funding_rate_timestamp'])/1000): float(d['funding_rate']) for d in data}  # in case they one day give more than 1 result
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_bybit.py", line 156, in <dictcomp>
+    pair_rates = {datetime.fromtimestamp(int(d['funding_rate_timestamp'])/1000): float(d['funding_rate']) for d in data}  # in case they one day give more than 1 result
+TypeError: string indices must be integers
+22-03-24 01:06:05 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBybit.get_historical_funding_rates at 0x000001CEF49D4670>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_bybit.py", line 156, in get_historical_funding_rates
+    pair_rates = {datetime.fromtimestamp(int(d['funding_rate_timestamp'])/1000): float(d['funding_rate']) for d in data}  # in case they one day give more than 1 result
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_bybit.py", line 156, in <dictcomp>
+    pair_rates = {datetime.fromtimestamp(int(d['funding_rate_timestamp'])/1000): float(d['funding_rate']) for d in data}  # in case they one day give more than 1 result
+TypeError: string indices must be integers
+22-03-24 01:06:05 	 CRITICAL 	 utils.py - try5times_wrapper: 	 <function CommsBybit.get_historical_funding_rates at 0x000001CEF49D4670> failed to work after 5 attempts.
+22-03-24 01:07:56 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBybit.get_historical_funding_rates at 0x0000029AB7CF3700>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_bybit.py", line 156, in get_historical_funding_rates
+    pair_rates = {datetime.fromtimestamp(int(data['funding_rate_timestamp'])/1000): float(data['funding_rate'])}
+ValueError: invalid literal for int() with base 10: '2022-03-24T00:00:00.000Z'
+22-03-24 01:07:57 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBybit.get_historical_funding_rates at 0x0000029AB7CF3700>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_bybit.py", line 156, in get_historical_funding_rates
+    pair_rates = {datetime.fromtimestamp(int(data['funding_rate_timestamp'])/1000): float(data['funding_rate'])}
+ValueError: invalid literal for int() with base 10: '2022-03-24T00:00:00.000Z'
+22-03-24 01:07:58 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBybit.get_historical_funding_rates at 0x0000029AB7CF3700>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_bybit.py", line 156, in get_historical_funding_rates
+    pair_rates = {datetime.fromtimestamp(int(data['funding_rate_timestamp'])/1000): float(data['funding_rate'])}
+ValueError: invalid literal for int() with base 10: '2022-03-24T00:00:00.000Z'
+22-03-24 01:08:01 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBybit.get_historical_funding_rates at 0x0000029AB7CF3700>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_bybit.py", line 156, in get_historical_funding_rates
+    pair_rates = {datetime.fromtimestamp(int(data['funding_rate_timestamp'])/1000): float(data['funding_rate'])}
+ValueError: invalid literal for int() with base 10: '2022-03-24T00:00:00.000Z'
+22-03-24 01:08:03 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBybit.get_historical_funding_rates at 0x0000029AB7CF3700>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_bybit.py", line 156, in get_historical_funding_rates
+    pair_rates = {datetime.fromtimestamp(int(data['funding_rate_timestamp'])/1000): float(data['funding_rate'])}
+ValueError: invalid literal for int() with base 10: '2022-03-24T00:00:00.000Z'
+22-03-24 01:08:03 	 CRITICAL 	 utils.py - try5times_wrapper: 	 <function CommsBybit.get_historical_funding_rates at 0x0000029AB7CF3700> failed to work after 5 attempts.

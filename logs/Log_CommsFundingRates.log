@@ -1,0 +1,179 @@
+22-03-23 19:34:36 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsFundingRates.get_available_perps at 0x000002261C70A700>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_funding_rates.py", line 160, in get_available_perps
+    self.available_perps[underlying][quote].update({exchange: True})
+TypeError: 'NoneType' object is not subscriptable
+22-03-23 19:34:42 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsFundingRates.get_available_perps at 0x000002261C70A700>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_funding_rates.py", line 160, in get_available_perps
+    self.available_perps[underlying][quote].update({exchange: True})
+TypeError: 'NoneType' object is not subscriptable
+22-03-23 19:34:47 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsFundingRates.get_available_perps at 0x000002261C70A700>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_funding_rates.py", line 160, in get_available_perps
+    self.available_perps[underlying][quote].update({exchange: True})
+TypeError: 'NoneType' object is not subscriptable
+22-03-23 19:34:54 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsFundingRates.get_available_perps at 0x000002261C70A700>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_funding_rates.py", line 160, in get_available_perps
+    self.available_perps[underlying][quote].update({exchange: True})
+TypeError: 'NoneType' object is not subscriptable
+22-03-23 19:35:01 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsFundingRates.get_available_perps at 0x000002261C70A700>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_funding_rates.py", line 160, in get_available_perps
+    self.available_perps[underlying][quote].update({exchange: True})
+TypeError: 'NoneType' object is not subscriptable
+22-03-23 19:35:01 	 CRITICAL 	 utils.py - try5times_wrapper: 	 <function CommsFundingRates.get_available_perps at 0x000002261C70A700> failed to work after 5 attempts.
+22-03-23 19:36:07 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsFundingRates.get_available_perps at 0x000002297FBB9700>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_funding_rates.py", line 161, in get_available_perps
+    self.available_perps[underlying][quote].update({exchange: True})
+TypeError: 'NoneType' object is not subscriptable
+22-03-23 19:36:12 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsFundingRates.get_available_perps at 0x000002297FBB9700>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_funding_rates.py", line 161, in get_available_perps
+    self.available_perps[underlying][quote].update({exchange: True})
+TypeError: 'NoneType' object is not subscriptable
+22-03-23 19:36:18 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsFundingRates.get_available_perps at 0x000002297FBB9700>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_funding_rates.py", line 161, in get_available_perps
+    self.available_perps[underlying][quote].update({exchange: True})
+TypeError: 'NoneType' object is not subscriptable
+22-03-23 19:36:25 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsFundingRates.get_available_perps at 0x000002297FBB9700>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_funding_rates.py", line 161, in get_available_perps
+    self.available_perps[underlying][quote].update({exchange: True})
+TypeError: 'NoneType' object is not subscriptable
+22-03-23 19:36:33 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsFundingRates.get_available_perps at 0x000002297FBB9700>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_funding_rates.py", line 161, in get_available_perps
+    self.available_perps[underlying][quote].update({exchange: True})
+TypeError: 'NoneType' object is not subscriptable
+22-03-23 19:36:33 	 CRITICAL 	 utils.py - try5times_wrapper: 	 <function CommsFundingRates.get_available_perps at 0x000002297FBB9700> failed to work after 5 attempts.
+22-03-23 19:38:47 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsFundingRates.get_available_perps at 0x0000024A776C0700>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_funding_rates.py", line 161, in get_available_perps
+    self.available_perps[underlying][quote].update({exchange: True})
+TypeError: 'NoneType' object is not subscriptable
+22-03-23 19:40:37 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsFundingRates.get_available_perps at 0x00000262C6D59700>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_funding_rates.py", line 161, in get_available_perps
+    self.available_perps[underlying][quote].update({exchange: True})
+TypeError: 'NoneType' object is not subscriptable
+22-03-23 19:40:54 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsFundingRates.get_available_perps at 0x00000262C6D59700>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_funding_rates.py", line 161, in get_available_perps
+    self.available_perps[underlying][quote].update({exchange: True})
+TypeError: 'NoneType' object is not subscriptable
+22-03-23 19:41:36 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsFundingRates.get_available_perps at 0x00000262C6D59700>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_funding_rates.py", line 161, in get_available_perps
+    self.available_perps[underlying][quote].update({exchange: True})
+TypeError: 'NoneType' object is not subscriptable
+22-03-23 19:42:07 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsFundingRates.get_available_perps at 0x00000262C6D59700>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_funding_rates.py", line 161, in get_available_perps
+    self.available_perps[underlying][quote].update({exchange: True})
+TypeError: 'NoneType' object is not subscriptable
+22-03-23 19:42:26 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsFundingRates.get_available_perps at 0x00000262C6D59700>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_funding_rates.py", line 161, in get_available_perps
+    self.available_perps[underlying][quote].update({exchange: True})
+TypeError: 'NoneType' object is not subscriptable
+22-03-23 19:42:26 	 CRITICAL 	 utils.py - try5times_wrapper: 	 <function CommsFundingRates.get_available_perps at 0x00000262C6D59700> failed to work after 5 attempts.
+22-03-23 19:43:41 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsFundingRates.get_available_perps at 0x00000203A589B820>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_funding_rates.py", line 162, in get_available_perps
+    self.available_perps[underlying][quote].update({exchange: True})
+TypeError: 'NoneType' object is not subscriptable
+22-03-23 19:45:56 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsFundingRates.get_available_perps at 0x0000024D9112B820>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_funding_rates.py", line 163, in get_available_perps
+    self.available_perps[underlying][quote].update({exchange: True})
+TypeError: 'NoneType' object is not subscriptable
+22-03-23 19:45:58 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsFundingRates.get_available_perps at 0x0000024D9112B820>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_funding_rates.py", line 163, in get_available_perps
+    self.available_perps[underlying][quote].update({exchange: True})
+TypeError: 'NoneType' object is not subscriptable
+22-03-23 19:46:01 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsFundingRates.get_available_perps at 0x0000024D9112B820>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_funding_rates.py", line 163, in get_available_perps
+    self.available_perps[underlying][quote].update({exchange: True})
+TypeError: 'NoneType' object is not subscriptable
+22-03-23 19:46:04 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsFundingRates.get_available_perps at 0x0000024D9112B820>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_funding_rates.py", line 163, in get_available_perps
+    self.available_perps[underlying][quote].update({exchange: True})
+TypeError: 'NoneType' object is not subscriptable
+22-03-23 19:46:09 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsFundingRates.get_available_perps at 0x0000024D9112B820>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_funding_rates.py", line 163, in get_available_perps
+    self.available_perps[underlying][quote].update({exchange: True})
+TypeError: 'NoneType' object is not subscriptable
+22-03-23 19:46:09 	 CRITICAL 	 utils.py - try5times_wrapper: 	 <function CommsFundingRates.get_available_perps at 0x0000024D9112B820> failed to work after 5 attempts.
+22-03-23 19:46:35 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsFundingRates.get_available_perps at 0x000001F69EA4A820>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_funding_rates.py", line 163, in get_available_perps
+    self.available_perps[underlying][quote].update({exchange: True})
+TypeError: 'NoneType' object is not subscriptable
+22-03-23 19:46:39 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsFundingRates.get_available_perps at 0x000001F69EA4A820>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_funding_rates.py", line 163, in get_available_perps
+    self.available_perps[underlying][quote].update({exchange: True})
+TypeError: 'NoneType' object is not subscriptable
+22-03-23 19:46:46 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsFundingRates.get_available_perps at 0x000001F69EA4A820>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_funding_rates.py", line 163, in get_available_perps
+    self.available_perps[underlying][quote].update({exchange: True})
+TypeError: 'NoneType' object is not subscriptable

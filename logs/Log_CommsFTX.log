@@ -1,0 +1,148 @@
+22-03-24 00:08:55 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsFTX.get_historical_funding_rates at 0x000001FCD65A3160>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_ftx.py", line 126, in get_historical_funding_rates
+    pair_rates = {datetime.strptime(d['time'], '%Y-%m-%dT%H:%M:%S+%z'): d['rate'] for d in data}
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_ftx.py", line 126, in <dictcomp>
+    pair_rates = {datetime.strptime(d['time'], '%Y-%m-%dT%H:%M:%S+%z'): d['rate'] for d in data}
+  File "C:\Users\micha\AppData\Local\Programs\Python\Python38\lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+  File "C:\Users\micha\AppData\Local\Programs\Python\Python38\lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '2022-03-24T04:00:00+00:00' does not match format '%Y-%m-%dT%H:%M:%S+%z'
+22-03-24 00:08:56 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsFTX.get_historical_funding_rates at 0x000001FCD65A3160>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_ftx.py", line 126, in get_historical_funding_rates
+    pair_rates = {datetime.strptime(d['time'], '%Y-%m-%dT%H:%M:%S+%z'): d['rate'] for d in data}
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_ftx.py", line 126, in <dictcomp>
+    pair_rates = {datetime.strptime(d['time'], '%Y-%m-%dT%H:%M:%S+%z'): d['rate'] for d in data}
+  File "C:\Users\micha\AppData\Local\Programs\Python\Python38\lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+  File "C:\Users\micha\AppData\Local\Programs\Python\Python38\lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '2022-03-24T04:00:00+00:00' does not match format '%Y-%m-%dT%H:%M:%S+%z'
+22-03-24 00:08:57 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsFTX.get_historical_funding_rates at 0x000001FCD65A3160>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_ftx.py", line 126, in get_historical_funding_rates
+    pair_rates = {datetime.strptime(d['time'], '%Y-%m-%dT%H:%M:%S+%z'): d['rate'] for d in data}
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_ftx.py", line 126, in <dictcomp>
+    pair_rates = {datetime.strptime(d['time'], '%Y-%m-%dT%H:%M:%S+%z'): d['rate'] for d in data}
+  File "C:\Users\micha\AppData\Local\Programs\Python\Python38\lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+  File "C:\Users\micha\AppData\Local\Programs\Python\Python38\lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '2022-03-24T04:00:00+00:00' does not match format '%Y-%m-%dT%H:%M:%S+%z'
+22-03-24 00:08:59 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsFTX.get_historical_funding_rates at 0x000001FCD65A3160>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_ftx.py", line 126, in get_historical_funding_rates
+    pair_rates = {datetime.strptime(d['time'], '%Y-%m-%dT%H:%M:%S+%z'): d['rate'] for d in data}
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_ftx.py", line 126, in <dictcomp>
+    pair_rates = {datetime.strptime(d['time'], '%Y-%m-%dT%H:%M:%S+%z'): d['rate'] for d in data}
+  File "C:\Users\micha\AppData\Local\Programs\Python\Python38\lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+  File "C:\Users\micha\AppData\Local\Programs\Python\Python38\lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '2022-03-24T04:00:00+00:00' does not match format '%Y-%m-%dT%H:%M:%S+%z'
+22-03-24 00:09:01 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsFTX.get_historical_funding_rates at 0x000001FCD65A3160>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_ftx.py", line 126, in get_historical_funding_rates
+    pair_rates = {datetime.strptime(d['time'], '%Y-%m-%dT%H:%M:%S+%z'): d['rate'] for d in data}
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_ftx.py", line 126, in <dictcomp>
+    pair_rates = {datetime.strptime(d['time'], '%Y-%m-%dT%H:%M:%S+%z'): d['rate'] for d in data}
+  File "C:\Users\micha\AppData\Local\Programs\Python\Python38\lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+  File "C:\Users\micha\AppData\Local\Programs\Python\Python38\lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '2022-03-24T04:00:00+00:00' does not match format '%Y-%m-%dT%H:%M:%S+%z'
+22-03-24 00:09:01 	 CRITICAL 	 utils.py - try5times_wrapper: 	 <function CommsFTX.get_historical_funding_rates at 0x000001FCD65A3160> failed to work after 5 attempts.
+22-03-24 00:12:17 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsFTX.get_historical_funding_rates at 0x000001A150FA40D0>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_ftx.py", line 130, in get_historical_funding_rates
+    pair_rates = {self.parse_ftx_datetime_string(d['time']): d['rate'] for d in data}
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_ftx.py", line 130, in <dictcomp>
+    pair_rates = {self.parse_ftx_datetime_string(d['time']): d['rate'] for d in data}
+TypeError: parse_ftx_datetime_string() takes 1 positional argument but 2 were given
+22-03-24 00:12:17 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsFTX.get_historical_funding_rates at 0x000001A150FA40D0>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_ftx.py", line 130, in get_historical_funding_rates
+    pair_rates = {self.parse_ftx_datetime_string(d['time']): d['rate'] for d in data}
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_ftx.py", line 130, in <dictcomp>
+    pair_rates = {self.parse_ftx_datetime_string(d['time']): d['rate'] for d in data}
+TypeError: parse_ftx_datetime_string() takes 1 positional argument but 2 were given
+22-03-24 00:12:18 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsFTX.get_historical_funding_rates at 0x000001A150FA40D0>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_ftx.py", line 130, in get_historical_funding_rates
+    pair_rates = {self.parse_ftx_datetime_string(d['time']): d['rate'] for d in data}
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_ftx.py", line 130, in <dictcomp>
+    pair_rates = {self.parse_ftx_datetime_string(d['time']): d['rate'] for d in data}
+TypeError: parse_ftx_datetime_string() takes 1 positional argument but 2 were given
+22-03-24 00:12:20 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsFTX.get_historical_funding_rates at 0x000001A150FA40D0>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_ftx.py", line 130, in get_historical_funding_rates
+    pair_rates = {self.parse_ftx_datetime_string(d['time']): d['rate'] for d in data}
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_ftx.py", line 130, in <dictcomp>
+    pair_rates = {self.parse_ftx_datetime_string(d['time']): d['rate'] for d in data}
+TypeError: parse_ftx_datetime_string() takes 1 positional argument but 2 were given
+22-03-24 00:12:22 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsFTX.get_historical_funding_rates at 0x000001A150FA40D0>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_ftx.py", line 130, in get_historical_funding_rates
+    pair_rates = {self.parse_ftx_datetime_string(d['time']): d['rate'] for d in data}
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_ftx.py", line 130, in <dictcomp>
+    pair_rates = {self.parse_ftx_datetime_string(d['time']): d['rate'] for d in data}
+TypeError: parse_ftx_datetime_string() takes 1 positional argument but 2 were given
+22-03-24 00:12:22 	 CRITICAL 	 utils.py - try5times_wrapper: 	 <function CommsFTX.get_historical_funding_rates at 0x000001A150FA40D0> failed to work after 5 attempts.
+22-03-24 00:13:33 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsFTX.get_historical_funding_rates at 0x000002815B9A30D0>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_ftx.py", line 132, in get_historical_funding_rates
+    data = response['result']
+KeyError: 'result'
+22-03-24 00:13:34 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsFTX.get_historical_funding_rates at 0x000002815B9A30D0>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_ftx.py", line 132, in get_historical_funding_rates
+    data = response['result']
+KeyError: 'result'
+22-03-24 00:13:34 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsFTX.get_historical_funding_rates at 0x000002815B9A30D0>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_ftx.py", line 132, in get_historical_funding_rates
+    data = response['result']
+KeyError: 'result'
+22-03-24 00:13:36 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsFTX.get_historical_funding_rates at 0x000002815B9A30D0>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_ftx.py", line 132, in get_historical_funding_rates
+    data = response['result']
+KeyError: 'result'
+22-03-24 00:13:39 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsFTX.get_historical_funding_rates at 0x000002815B9A30D0>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_ftx.py", line 132, in get_historical_funding_rates
+    data = response['result']
+KeyError: 'result'
+22-03-24 00:13:39 	 CRITICAL 	 utils.py - try5times_wrapper: 	 <function CommsFTX.get_historical_funding_rates at 0x000002815B9A30D0> failed to work after 5 attempts.

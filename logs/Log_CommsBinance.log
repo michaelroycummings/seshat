@@ -1,0 +1,149 @@
+22-03-23 16:19:33 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_next_funding_rate at 0x000001DAD9CF61F0>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 13, in try5times_wrapper
+    return function(self, *args, **kwargs)
+TypeError: get_next_funding_rate() missing 1 required positional argument: 'pairs'
+22-03-23 16:19:59 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_next_funding_rate at 0x000001CE5C576160>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+TypeError: get_next_funding_rate() missing 1 required positional argument: 'pairs'
+22-03-23 16:19:59 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_next_funding_rate at 0x000001CE5C576160>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+TypeError: get_next_funding_rate() missing 1 required positional argument: 'pairs'
+22-03-23 16:20:00 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_next_funding_rate at 0x000001CE5C576160>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+TypeError: get_next_funding_rate() missing 1 required positional argument: 'pairs'
+22-03-23 16:20:02 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_next_funding_rate at 0x000001CE5C576160>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+TypeError: get_next_funding_rate() missing 1 required positional argument: 'pairs'
+22-03-23 16:20:04 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_next_funding_rate at 0x000001CE5C576160>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+TypeError: get_next_funding_rate() missing 1 required positional argument: 'pairs'
+22-03-23 16:20:04 	 CRITICAL 	 utils.py - try5times_wrapper: 	 <function CommsBinance.get_next_funding_rate at 0x000001CE5C576160> failed to work after 5 attempts.
+22-03-23 16:20:59 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_next_funding_rate at 0x0000015C3B2A61F0>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 104, in get_next_funding_rate
+    url = f'{self.binance_url_c2f}/v1/premiumIndex'
+AttributeError: 'CommsBinance' object has no attribute 'binance_url_c2f'
+22-03-23 16:20:59 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_next_funding_rate at 0x0000015C3B2A61F0>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 104, in get_next_funding_rate
+    url = f'{self.binance_url_c2f}/v1/premiumIndex'
+AttributeError: 'CommsBinance' object has no attribute 'binance_url_c2f'
+22-03-23 16:21:00 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_next_funding_rate at 0x0000015C3B2A61F0>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 104, in get_next_funding_rate
+    url = f'{self.binance_url_c2f}/v1/premiumIndex'
+AttributeError: 'CommsBinance' object has no attribute 'binance_url_c2f'
+22-03-23 16:21:02 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_next_funding_rate at 0x0000015C3B2A61F0>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 104, in get_next_funding_rate
+    url = f'{self.binance_url_c2f}/v1/premiumIndex'
+AttributeError: 'CommsBinance' object has no attribute 'binance_url_c2f'
+22-03-23 16:21:05 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_next_funding_rate at 0x0000015C3B2A61F0>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 104, in get_next_funding_rate
+    url = f'{self.binance_url_c2f}/v1/premiumIndex'
+AttributeError: 'CommsBinance' object has no attribute 'binance_url_c2f'
+22-03-23 16:21:05 	 CRITICAL 	 utils.py - try5times_wrapper: 	 <function CommsBinance.get_next_funding_rate at 0x0000015C3B2A61F0> failed to work after 5 attempts.
+22-03-23 23:28:34 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_historical_funding_rates at 0x000001FF914AFCA0>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 141, in get_historical_funding_rates
+    url = f'{self.binance_url_c2c}/v1/fundingRate'
+AttributeError: 'CommsBinance' object has no attribute 'binance_url_c2c'
+22-03-23 23:28:34 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_historical_funding_rates at 0x000001FF914AFCA0>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 141, in get_historical_funding_rates
+    url = f'{self.binance_url_c2c}/v1/fundingRate'
+AttributeError: 'CommsBinance' object has no attribute 'binance_url_c2c'
+22-03-23 23:28:35 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_historical_funding_rates at 0x000001FF914AFCA0>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 141, in get_historical_funding_rates
+    url = f'{self.binance_url_c2c}/v1/fundingRate'
+AttributeError: 'CommsBinance' object has no attribute 'binance_url_c2c'
+22-03-23 23:28:37 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_historical_funding_rates at 0x000001FF914AFCA0>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 141, in get_historical_funding_rates
+    url = f'{self.binance_url_c2c}/v1/fundingRate'
+AttributeError: 'CommsBinance' object has no attribute 'binance_url_c2c'
+22-03-23 23:28:39 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_historical_funding_rates at 0x000001FF914AFCA0>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 141, in get_historical_funding_rates
+    url = f'{self.binance_url_c2c}/v1/fundingRate'
+AttributeError: 'CommsBinance' object has no attribute 'binance_url_c2c'
+22-03-23 23:28:39 	 CRITICAL 	 utils.py - try5times_wrapper: 	 <function CommsBinance.get_historical_funding_rates at 0x000001FF914AFCA0> failed to work after 5 attempts.
+22-03-23 23:46:28 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_historical_funding_rates at 0x000001C01DFA0CA0>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 169, in get_historical_funding_rates
+    pair_rates = {datetime.fromtimestamp(d['fundingTime']): d['fundingRate'] for d in response}
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 169, in <dictcomp>
+    pair_rates = {datetime.fromtimestamp(d['fundingTime']): d['fundingRate'] for d in response}
+OSError: [Errno 22] Invalid argument
+22-03-23 23:46:28 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_historical_funding_rates at 0x000001C01DFA0CA0>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 169, in get_historical_funding_rates
+    pair_rates = {datetime.fromtimestamp(d['fundingTime']): d['fundingRate'] for d in response}
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 169, in <dictcomp>
+    pair_rates = {datetime.fromtimestamp(d['fundingTime']): d['fundingRate'] for d in response}
+OSError: [Errno 22] Invalid argument
+22-03-23 23:46:29 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_historical_funding_rates at 0x000001C01DFA0CA0>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 169, in get_historical_funding_rates
+    pair_rates = {datetime.fromtimestamp(d['fundingTime']): d['fundingRate'] for d in response}
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 169, in <dictcomp>
+    pair_rates = {datetime.fromtimestamp(d['fundingTime']): d['fundingRate'] for d in response}
+OSError: [Errno 22] Invalid argument
+22-03-23 23:46:32 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_historical_funding_rates at 0x000001C01DFA0CA0>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 169, in get_historical_funding_rates
+    pair_rates = {datetime.fromtimestamp(d['fundingTime']): d['fundingRate'] for d in response}
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 169, in <dictcomp>
+    pair_rates = {datetime.fromtimestamp(d['fundingTime']): d['fundingRate'] for d in response}
+OSError: [Errno 22] Invalid argument
+22-03-23 23:46:34 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_historical_funding_rates at 0x000001C01DFA0CA0>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 169, in get_historical_funding_rates
+    pair_rates = {datetime.fromtimestamp(d['fundingTime']): d['fundingRate'] for d in response}
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 169, in <dictcomp>
+    pair_rates = {datetime.fromtimestamp(d['fundingTime']): d['fundingRate'] for d in response}
+OSError: [Errno 22] Invalid argument
+22-03-23 23:46:34 	 CRITICAL 	 utils.py - try5times_wrapper: 	 <function CommsBinance.get_historical_funding_rates at 0x000001C01DFA0CA0> failed to work after 5 attempts.
