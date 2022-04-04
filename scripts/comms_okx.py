@@ -26,22 +26,12 @@ class CommsOKX:
 
 
     @try5times
-    def get_perp_pairs(self) -> Dict[str, dict]:
+    def get_perp_pairs(self) -> pd.DataFrame:
         '''
         Gets all the perpetual pairs traded at OKX.
         Can be plugged directly into CommsFundingRates.
-
-        Output
-        ------
-        perp_pairs = {
-            BTCUSDT: {
-                'c2c': True,
-                'underlying_asset': BTC,
-                'quote_asset': USDT
-            },
-        }
         '''
-        perp_pairs = {}
+        perp_pairs = pd.DataFrame(columns=['underlying', 'quote'])
         url = f'{self.url}/api/v5/public/instruments'
         payload = {'instType': 'SWAP'}
         response = requests.request("GET", url, params=payload).json()
@@ -58,23 +48,20 @@ class CommsOKX:
                 quote_asset      = data_dict['ctValCcy']
 
             ## Add Pair
-            data_pair = f'{underlying_asset}{quote_asset}'
-            c2c = False if quote_asset == 'USD' else True
-            perp_pairs[data_pair] = {
-                'c2c': c2c,
-                'underlying_asset': underlying_asset,
-                'quote_asset': quote_asset
-            }
+            perp_pairs = perp_pairs.append({
+                'underlying': underlying_asset,
+                'quote': quote_asset,
+            }, ignore_index=True)
         return perp_pairs
 
 
     @try5times
-    def get_next_funding_rate(self, pair_tuples: List[Tuple[str, str]]) -> Dict[str, float]:
+    def get_next_funding_rate(self, pairs: List[Tuple[str, str]]) -> pd.DataFrame:
         '''
-        Function Input
-        --------------
-        pair_tuples : list
-            E.g. [('BTC', 'USDT'), ('BTC', 'USD'), ('ETH', 'USDT'), ('ETH', 'USD')]
+        Method Inputs
+        -------------
+        pairs: a list of tuples (str, str)
+            Format is ('underlying_asset', 'quote_asset')
 
         Endpoint Inputs
         ----------------
@@ -87,10 +74,9 @@ class CommsOKX:
         ---------------
         {'code': '0', 'data': [{'fundingRate': '0.00001034', 'fundingTime': '1620691200000', 'instId': 'BTC-USD-SWAP', 'instType': 'SWAP', 'nextFundingRate': '0.00081', 'nextFundingTime': ''}], 'msg': ''}
         '''
-        funding_rates = {}
+        funding_rates = pd.DataFrame(columns=['datetime', 'underlying', 'quote', 'rate'])
 
-        for (underlying, quote) in pair_tuples:
-            pair = underlying + quote
+        for (underlying, quote) in pairs:
             asset_id = f'{underlying}-{quote}-SWAP'
             url = f'{self.url}/api/v5/public/funding-rate'
             payload = {
@@ -98,18 +84,33 @@ class CommsOKX:
             }
             response = requests.request("GET", url, params=payload).json()
             try:
-                funding_rates[pair] = float(response['data'][0]['fundingRate'])
+                data = response['data'][0]
             except IndexError:
                 if response['msg'].startswith('Instrument ID does not exist.'):
                     pass
                 else:
-                    raise
+                    self.logger.exception('')
+                    continue
+
+            ## Parse Funding Rate
+            parsed_dict = {
+                    'datetime': datetime.fromtimestamp(int(data['fundingTime'])/1000),
+                    'underlying': underlying,
+                    'quote': quote,
+                    'rate': float(data['fundingRate']),
+                }
+            funding_rates = funding_rates.append(parsed_dict, ignore_index=True)
         return funding_rates
 
 
     @try5times
-    def get_historical_funding_rates(self, pair_tuples: List[Tuple[str, str]]) -> pd.Series:
+    def get_historical_funding_rates(self, pairs: List[Tuple[str, str]]) -> pd.DataFrame:
         '''
+        Method Inputs
+        -------------
+        pairs: a list of tuples (str, str)
+            Format is ('underlying_asset', 'quote_asset')
+
         Endpoint Inputs
         ----------------
         OKEx: /api/v5/public/funding-rate-history
@@ -128,9 +129,9 @@ class CommsOKX:
             BTCUSDT: pd.Series({datetime_1: rate_1, datetime_2: rate_2}),
         }
         '''
-        funding_rates = {}
-        for (underlying, quote) in pair_tuples:
-            pair = underlying + quote
+        funding_rates = pd.DataFrame(columns=['datetime', 'underlying', 'quote', 'rate'])
+
+        for (underlying, quote) in pairs:
             asset_id = f'{underlying}-{quote}-SWAP'
             url = f'{self.url}/api/v5/public/funding-rate-history'
             payload = {
@@ -143,14 +144,20 @@ class CommsOKX:
             if int(response['code']) == 51000:
                 continue  # no contract for this pair
 
-            ## Parse Funding Rates
+            ## Parse Funding Rates for each time period
             data = response['data']
-            pair_rates = {datetime.fromtimestamp(int(d['fundingTime'])/1000): float(d['fundingRate']) for d in data}
-            funding_rates[pair] = pd.Series(pair_rates, name='okx')
+            for time_dict in data:
+                parsed_dict = {
+                        'datetime': datetime.fromtimestamp(int(time_dict['fundingTime'])/1000),
+                        'underlying': underlying,
+                        'quote': quote,
+                        'rate': float(time_dict['fundingRate']),
+                    }
+                funding_rates = funding_rates.append(parsed_dict, ignore_index=True)
 
         return funding_rates
 
 
 if __name__ == '__main__':
-    CommsOKX().get_historical_funding_rates(pair_tuples=(("Robbysnoby", "USDT"), ("BTC", "USDT"), ("ETH", "USD")))
+    CommsOKX().get_historical_funding_rates(pairs=(("Robbysnoby", "USDT"), ("BTC", "USDT"), ("ETH", "USD")))
     pass

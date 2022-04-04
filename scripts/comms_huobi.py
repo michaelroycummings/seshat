@@ -26,41 +26,34 @@ class CommsHuobi:
 
 
     @try5times
-    def get_perp_pairs(self) -> Dict[str, dict]:
+    def get_perp_pairs(self) -> pd.DataFrame:
         '''
         Gets all the perpetual pairs traded at Huobi.
         Can be plugged directly into CommsFundingRates.
-
-        Output
-        ------
-        perp_pairs = {
-            BTCUSDT: {
-                'c2c': True,
-                'underlying_asset': BTC,
-                'quote_asset': USDT
-            },
-        }
         '''
-        perp_pairs = {}
-        for url, is_c2c, quote_asset in [
-            (f'{self.url}/linear-swap-api/v1/swap_batch_funding_rate', True, 'USDT'),
-            (f'{self.url}/swap-api/v1/swap_batch_funding_rate', False, 'USD')
+        perp_pairs = pd.DataFrame(columns=['underlying', 'quote'])
+        for url, quote_asset in [
+            (f'{self.url}/linear-swap-api/v1/swap_batch_funding_rate', 'USDT'),
+            (f'{self.url}/swap-api/v1/swap_batch_funding_rate', 'USD')
         ]:
             response = requests.request("GET", url).json()
             for data_dict in response.get('data'):
-                data_pair = f'{data_dict["symbol"]}{quote_asset}'
-                perp_pairs[data_pair] = {
-                    'c2c': is_c2c,
-                    'underlying_asset': data_dict['symbol'],
-                    'quote_asset': quote_asset,
-                    'huobi': True
-                }
+                perp_pairs = perp_pairs.append({
+                    'underlying': data_dict['symbol'],
+                    'quote': quote_asset,
+                }, ignore_index=True)
         return perp_pairs
 
 
     @try5times
-    def get_next_funding_rate(self, pairs: Union[List[str], None] = None) -> Dict[str, float]:
+    def get_next_funding_rate(self, pairs: Union[List[Tuple[str, str]], None]) -> pd.DataFrame:
         '''
+        Method Inputs
+        -------------
+        pairs: a list of tuples (str, str) or NoneType
+            Format is ('underlying_asset', 'quote_asset')
+            If NoneType, returns all funding rates that Huobi has.
+
         Endpoint Inputs
         ----------------
         C2C: /linear-swap-api/v1/swap_batch_funding_rate
@@ -82,7 +75,9 @@ class CommsHuobi:
             {'estimated_rate': '0.000124803750967047', 'funding_rate': '0.000100000000000000', 'contract_code': 'XLM-USD', 'symbol': 'XLM', 'fee_asset': 'XLM', 'funding_time': '1620403200000', 'next_funding_time': '1620432000000'}
         ], 'ts': 1620400376124}
         '''
-        funding_rates = {}
+        pairs_lookup = {f'{underlying}{quote}': (underlying, quote) for (underlying, quote) in pairs}
+        funding_rates = pd.DataFrame(columns=['datetime', 'underlying', 'quote', 'rate'])
+
 
         ## Perpetual Funding Rates
         for url in [
@@ -91,24 +86,38 @@ class CommsHuobi:
         ]:
             for data_dict in requests.request("GET", url).json()['data']:
                 pair = data_dict['contract_code'].replace('-', '')  # symbol format from the api: "BTC-USDT"
+                ## Check for non-perpetual futures contract
                 if re.match('(.+?)(\d\d\d\d\d\d)', pair):
                     continue  # some expiring futures are also given
-                else:
-                    try:
-                        funding_rates[pair] = float(data_dict['funding_rate'])
-                    except TypeError:
-                        continue   # another way to find expiring futures, as they don't have funding rates
-
-        ## Get Rates only for requests Pairs
-        if pairs is not None:
-            funding_rates = {pair: rate for pair, rate in funding_rates.items() if pair in pairs}
+                try:
+                    rate = float(data_dict['funding_rate'])
+                except TypeError:
+                    continue   # another way to find expiring futures, as they don't have funding rates
+                ## Ignore Pairs not requested
+                try:
+                    underlying_quote = pairs_lookup[pair]
+                except KeyError:
+                    continue
+                ## Parse Funding Rate
+                parsed_dict = {
+                        'datetime': datetime.fromtimestamp(int(data_dict['next_funding_time'])/1000),
+                        'underlying': underlying_quote[0],
+                        'quote': underlying_quote[1],
+                        'rate': rate,
+                    }
+                funding_rates = funding_rates.append(parsed_dict, ignore_index=True)
 
         return funding_rates
 
 
     @try5times
-    def get_historical_funding_rates(self, pair_tuples: List[Tuple[str, str]]) -> pd.Series:
+    def get_historical_funding_rates(self, pairs: List[Tuple[str, str]]) -> pd.DataFrame:
         '''
+        Method Inputs
+        -------------
+        pairs: a list of tuples (str, str)
+            Format is ('underlying_asset', 'quote_asset')
+
         Endpoint Inputs
         ---------------
         C2C: /linear-swap-api/v1/swap_historical_funding_rate
@@ -136,9 +145,9 @@ class CommsHuobi:
             BTCUSDT: pd.Series({datetime_1: rate_1, datetime_2: rate_2}),
         }
         '''
-        funding_rates = {}
-        unparsed_rates = {}
-        for (underlying, quote) in pair_tuples:
+        funding_rates = pd.DataFrame(columns=['datetime', 'underlying', 'quote', 'rate'])
+
+        for (underlying, quote) in pairs:
             pair = underlying + quote
             if quote in ['USDT']:
                 url = f'{self.url}/linear-swap-api/v1/swap_historical_funding_rate'
@@ -166,22 +175,29 @@ class CommsHuobi:
                     if response['err_msg'] == 'The contract doesnt exist.' or response['err_code'] == 1332:
                         break
                     else:
-                        raise
+                        self.logger.exception('')
+                        continue
 
                 ## Break Querying by pagination if no more results are returned
                 if len(data) == 0:
                     break
-                ## Format Funding rates into dict
-                else:
-                    unparsed_rates.update({datetime.fromtimestamp(int(d['funding_time'])/1000): float(d['funding_rate']) for d in data})
 
-            if len(unparsed_rates) != 0:  # Empty rates for contracts that don't exist
-                funding_rates[pair] = pd.Series(unparsed_rates, name='huobi')
+                ## Parse Funding Rates for each time period
+                for time_dict in data:
+                    parsed_dict = {
+                            'datetime': datetime.fromtimestamp(int(time_dict['funding_time'])/1000),
+                            'underlying': underlying,
+                            'quote': quote,
+                            'rate': float(time_dict['funding_rate']),
+                        }
+                    funding_rates = funding_rates.append(parsed_dict, ignore_index=True)
 
         return funding_rates
 
 
 
 if __name__ == '__main__':
-    CommsHuobi().get_historical_funding_rates(pair_tuples=(("Robbysnoby", "USDT"), ("BTC", "USDT"), ("ETH", "USD")))
+    CommsHuobi().get_next_funding_rate(pairs=(("Robbysnoby", "USDT"), ("BTC", "USDT"), ("ETH", "USD")))
     pass
+
+'1648771200000'

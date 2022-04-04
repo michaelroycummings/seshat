@@ -26,38 +26,32 @@ class CommsFTX:
 
 
     @try5times
-    def get_perp_pairs(self) -> Dict[str, dict]:
+    def get_perp_pairs(self) -> pd.DataFrame:
         '''
         Gets all the perpetual pairs traded at FTX.
         Can be plugged directly into CommsFundingRates.
-
-        Output
-        ------
-        perp_pairs = {
-            BTCUSD: {
-                'c2c': False,
-                'underlying_asset': BTC,
-                'quote_asset': USD
-            },
-        }
         '''
-        perp_pairs = {}
+        perp_pairs = pd.DataFrame(columns=['underlying', 'quote'])
         url = f'{self.url}/futures'
         response_ftx= requests.request("GET", url).json()['result']
         for data_dict in response_ftx:
             if data_dict.get('perpetual') == True:
-                data_pair = f'{data_dict["underlying"]}USD'
-                perp_pairs[data_pair] = {
-                    'c2c': False,
-                    'underlying_asset': data_dict['underlying'],
-                    'quote_asset': 'USD'  # they don't state a quote asset because all are in USD
-                }
+                ## Get Perp Futures Contract data
+                perp_pairs = perp_pairs.append({
+                    'underlying': data_dict["underlying"],
+                    'quote': 'USD',
+                }, ignore_index=True)
         return perp_pairs
 
 
     @try5times
-    def get_next_funding_rate(self, underlying_symbols: List[str]) -> Dict[str, float]:
+    def get_next_funding_rate(self, underlying_symbols: List[str]) -> pd.DataFrame:
         '''
+        Method Inputs
+        -------------
+        pairs: a list of str
+            Format is ['BTC', 'ETH', etc...]
+
         Endpoint Inputs
         ----------------
         FTX: /futures/{symbol}/stats
@@ -68,18 +62,25 @@ class CommsFTX:
         ---------------
         {'success': True, 'result': {'volume': 78639.7612, 'nextFundingRate': -2e-06, 'nextFundingTime': '2021-05-04T20:00:00+00:00', 'openInterest': 30195.1692}}
         '''
-        funding_rates = {}
-        for underlying in underlying_symbols:
-            pair = underlying + 'USD'
-            url = f"{self.url}/futures/{underlying}-PERP/stats"
+        funding_rates = pd.DataFrame(columns=['datetime', 'underlying', 'quote', 'rate'])
+        for underlying_symbol in underlying_symbols:
+            url = f"{self.url}/futures/{underlying_symbol}-PERP/stats"
             response = requests.request("GET", url).json()
             try:
-                funding_rates[pair] = float(response['result']['nextFundingRate'])
+                data = response['result']
             except KeyError:
                 if response['error'].startswith('No such future'):
                     continue
                 else:
                     raise
+            ## Parse Funding Rate
+            parsed_dict = {
+                    'datetime': datetime.strptime(data['nextFundingTime'], "%Y-%m-%dT%H:%M:%S+00:00"),
+                    'underlying': underlying_symbol,
+                    'quote': 'USD',
+                    'rate': float(data['nextFundingRate']),
+                }
+            funding_rates = funding_rates.append(parsed_dict, ignore_index=True)
         return funding_rates
 
 
@@ -90,8 +91,13 @@ class CommsFTX:
 
 
     @try5times
-    def get_historical_funding_rates(self, underlying_symbols: List[str]) -> pd.Series:
+    def get_historical_funding_rates(self, underlying_symbols: List[str]) -> pd.DataFrame:
         '''
+        Method Inputs
+        -------------
+        pairs: a list of str
+            Format is ['BTC', 'ETH', etc...]
+
         Endpoint Inputs
         ---------------
         FTX: /funding_rates
@@ -112,7 +118,7 @@ class CommsFTX:
             ETHUSD: pd.Series({datetime_1: rate_1, datetime_2: rate_2}),
         }
         '''
-        funding_rates = {}
+        funding_rates = pd.DataFrame(columns=['datetime', 'underlying', 'quote', 'rate'])
 
         ## Get formatted start and end epoch time - this is not needed as 500 (the max) records are returned when no datetimes are given
         # now = datetime.now(timezone.utc)
@@ -133,11 +139,21 @@ class CommsFTX:
                 data = response['result']
             except KeyError:
                 if response['error'].startswith('No such future'):
+                    self.logger.debug(f'Bybit does not have funding rates for pair "{pair}".')
                     continue
                 else:
-                    raise
-            pair_rates = {self.parse_ftx_datetime_string(d['time']): float(d['rate']) for d in data}
-            funding_rates[pair] = pd.Series(pair_rates, name='ftx')
+                    self.logger.exception('')
+                    continue
+
+            ## Parse Funding Rates for each time period
+            for time_dict in data:
+                parsed_dict = {
+                        'datetime': self.parse_ftx_datetime_string(time_dict['time']),
+                        'underlying': underlying_symbol,
+                        'quote': 'USD',
+                        'rate': float(time_dict['rate']),
+                    }
+                funding_rates = funding_rates.append(parsed_dict, ignore_index=True)
 
         return funding_rates
 

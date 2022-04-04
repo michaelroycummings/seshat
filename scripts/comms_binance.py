@@ -4,7 +4,7 @@ from scripts.utils_logging import MyLogger
 from scripts.utils_data_locations import DataLoc
 
 ## External Libraries
-from typing import Dict, List, Union
+from typing import Dict, List, Union, Tuple
 import requests
 import json
 import re
@@ -27,44 +27,39 @@ class CommsBinance:
 
 
     @try5times
-    def get_perp_pairs(self) -> Dict[str, dict]:
+    def get_perp_pairs(self) -> pd.DataFrame:
         '''
         Gets all the perpetual pairs traded at Binance.
         Can be plugged directly into CommsFundingRates.
-
-        Output
-        ------
-        perp_pairs = {
-            BTCUSDT: {
-                'c2c': True,
-                'underlying_asset': BTC,
-                'quote_asset': USDT
-            },
-        }
         '''
-        perp_pairs = {}
-        for url, is_c2c in [
-            (f'{self.url_c2c}/v1/exchangeInfo', True),
-            (f'{self.url_c2f}/v1/exchangeInfo', False)
+        perp_pairs = pd.DataFrame(columns=['underlying', 'quote'])
+        for url in [
+            f'{self.url_c2c}/v1/exchangeInfo',
+            f'{self.url_c2f}/v1/exchangeInfo',
         ]:
             response = requests.request("GET", url).json()
             for data_dict in response.get('symbols'):
                 if data_dict.get('contractType') == 'PERPETUAL':  # do not consider expiring futures
-                    data_pair = data_dict['pair']
-                    perp_pairs[data_pair] = {
-                        'c2c': is_c2c,
-                        'underlying_asset': data_dict['baseAsset'],
-                        'quote_asset': data_dict['quoteAsset']
-                    }
+                    perp_pairs = perp_pairs.append({
+                        'underlying': data_dict['baseAsset'],
+                        'quote': data_dict['quoteAsset'],
+                    }, ignore_index=True)
         return perp_pairs
 
 
     @try5times
-    def get_next_funding_rate(self, pairs: Union[List[str], None] = None) -> Dict[str, float]:
+    def get_next_funding_rate(self, pairs: Union[List[Tuple[str, str]], None]) -> pd.DataFrame:
         '''
-        Returns a dict, for all perpetuals listed at Binance, of the upcoming funding rate.
+        Returns a dict, for requested pairs (or all pairs if NoneType given) listed at Binance,
+        of the upcoming funding rates.
             - NOTE that Binance rates are "Estimated Until Paid", so the final rate is not
               known until the begining of its period, when the rate is charged.
+
+        Method Inputs
+        -------------
+        pairs: a list of tuples (str, str) or NoneType
+            Format is ('underlying_asset', 'quote_asset')
+            If NoneType, returns all funding rates that Binance has.
 
         Endpoint Inputs
         ----------------
@@ -78,7 +73,7 @@ class CommsBinance:
             - "pair": <underlying_asset><quote_asset>
                 - E.g. BTCUSD
 
-        Example Output
+        Endpoint Output
         --------------
         C2C: [
             {'symbol': 'SUSHIUSDT', 'markPrice': '16.84710000', 'indexPrice': '16.82849111', 'estimatedSettlePrice': '16.82813723', 'lastFundingRate': '0.00044160', 'interestRate': '0.00010000', 'nextFundingTime': 1620403200000, 'time': 1620399721000},
@@ -89,37 +84,64 @@ class CommsBinance:
             {'symbol': 'LTCUSD_PERP', 'pair': 'LTCUSD', 'markPrice': '370.12016832', 'indexPrice': '356.87782325', 'estimatedSettlePrice': '356.72048049', 'lastFundingRate': '', 'interestRate': '', 'nextFundingTime': 0, 'time': 1620399663000}
         ]
         '''
-        funding_rates = {}
+        pairs_lookup = {f'{underlying}{quote}': (underlying, quote) for (underlying, quote) in pairs}
+        funding_rates = pd.DataFrame(columns=['datetime', 'underlying', 'quote', 'rate'])
 
         ## Get C2C (USDT quote) Perpetual Funding Rates
         url = f'{self.url_c2c}/v1/premiumIndex'
-        for data_dict in requests.request("GET", url).json():
+        response = requests.request("GET", url).json()
+        for data_dict in response:
             pair = data_dict['symbol']
+            ## Ignore non-perpetual futures
             if re.match('(\w+?)(_)(\d+)', pair):
                 continue  # some expiring futures are also given
-            else:
-                funding_rates[pair] = float(data_dict['lastFundingRate'])
+            ## Ignore Pairs not requested
+            try:
+                underlying_quote = pairs_lookup[pair]
+            except KeyError:
+                continue
+            ## Parse Funding Rate
+            parsed_dict = {
+                    'datetime': datetime.fromtimestamp(data_dict['nextFundingTime']/1000),
+                    'underlying': underlying_quote[0],
+                    'quote': underlying_quote[1],
+                    'rate': float(data_dict['lastFundingRate']),
+                }
+            funding_rates = funding_rates.append(parsed_dict, ignore_index=True)
 
         ## Get C2F (USD quote) Perpetual Funding Rates
         url = f'{self.url_c2f}/v1/premiumIndex'
-        for data_dict in requests.request("GET", url).json():  # C2F
-            if 'PERP' in data_dict['symbol']:  # do not get normal / expiring futures contracts
-                funding_rates[data_dict['pair']] = float(data_dict['lastFundingRate'])  # MUST USE "PAIR" and not "symbol"
-
-        ## Get Rates only for requests Pairs
-        if pairs is not None:
-            funding_rates = {pair: rate for pair, rate in funding_rates.items() if pair in pairs}
+        response = requests.request("GET", url).json()
+        for data_dict in response:  # C2F
+            contract_id = data_dict['symbol']  # format BTCUSD_PERP
+            pair = data_dict['pair']
+            ## Ignore non-perpetual futures
+            if contract_id.endswith('_PERP') is False:
+                continue
+            ## Ignore Pairs not requested
+            try:
+                underlying_quote = pairs_lookup[pair]
+            except KeyError:
+                continue
+            ## Parse Funding Rate
+            parsed_dict = {
+                    'datetime': datetime.fromtimestamp(data_dict['nextFundingTime']/1000),
+                    'underlying': underlying_quote[0],
+                    'quote': underlying_quote[1],
+                    'rate': float(data_dict['lastFundingRate']),
+                }
+            funding_rates = funding_rates.append(parsed_dict, ignore_index=True)
 
         return funding_rates
 
 
     @try5times
-    def get_historical_funding_rates(self, pairs: List[str]) -> pd.Series:
+    def get_historical_funding_rates(self, pairs: List[Tuple[str, str]]) -> pd.DataFrame:
         '''
-        Function Input
-        --------------
-        pairs : List[str]
-            In the format: ['BTCUSDT', 'BTCUSD', 'ETHUSDT']
+        Method Inputs
+        -------------
+        pairs: a list of tuples (str, str)
+            Format is ('underlying_asset', 'quote_asset')
 
         Endpoint Inputs
         ----------------
@@ -148,33 +170,41 @@ class CommsBinance:
             BTCUSDT: pd.Series({datetime_1: rate_1, datetime_2: rate_2}),
         }
         '''
-        funding_rates = {}
-        for pair in pairs:
-            if pair.endswith('USDT'):
+        funding_rates = pd.DataFrame(columns=['datetime', 'underlying', 'quote', 'rate'])
+
+        for (underlying, quote) in pairs:
+            if quote == 'USDT':
                 url = f'{self.url_c2c}/v1/fundingRate'
                 payload = {
-                    "symbol": pair,
+                    "symbol": f'{underlying}{quote}',
                     "limit": 1000  # 1000 is the max; there is no pagination
                 }
-            elif pair.endswith('USD'):
+            elif quote == 'USD':
                 url = f'{self.url_c2f}/v1/fundingRate'
                 payload = {
-                    "symbol": f'{pair}_PERP',
+                    "symbol": f'{underlying}{quote}_PERP',
                     "limit": 1000  # 1000 is the max; there is no pagination
                 }
             else:
-                self.logger.critical(f'Pair requested with unrecognised quote currency. Pair: {pair}.')
+                self.logger.critical(f'Pair requested with unrecognised quote currency. Underlying: {underlying}. Quote: {quote}.')
                 continue
             response = requests.request("GET", url, params=payload).json()
             if len(response) == 0:
                 continue
-            pair_rates = {datetime.fromtimestamp(d['fundingTime']/1000): float(d['fundingRate']) for d in response}
-            funding_rates[pair] = pd.Series(pair_rates, name='binance')
+            ## Parse Funding Rates for each time period
+            for time_dict in response:
+                parsed_dict = {
+                        'datetime': datetime.fromtimestamp(time_dict['fundingTime']/1000),
+                        'underlying': underlying,
+                        'quote': quote,
+                        'rate': float(time_dict['fundingRate']),
+                    }
+                funding_rates = funding_rates.append(parsed_dict, ignore_index=True)
 
         return funding_rates
 
 
 
 if __name__ == '__main__':
-    CommsBinance().get_historical_funding_rates(pairs=['BOOPEDOOPUSDT', 'BTCUSDT', 'ETHUSD'])
+    CommsBinance().get_next_funding_rate(pairs=[('BOOPEDOOP', 'USDT'), ('BTC', 'USDT'), ('ETH', 'USD')])
     pass

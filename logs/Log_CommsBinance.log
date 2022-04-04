@@ -147,3 +147,495 @@ Traceback (most recent call last):
     pair_rates = {datetime.fromtimestamp(d['fundingTime']): d['fundingRate'] for d in response}
 OSError: [Errno 22] Invalid argument
 22-03-23 23:46:34 	 CRITICAL 	 utils.py - try5times_wrapper: 	 <function CommsBinance.get_historical_funding_rates at 0x000001C01DFA0CA0> failed to work after 5 attempts.
+22-03-31 17:46:26 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_next_funding_rate at 0x00000245EC450F70>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 99, in get_next_funding_rate
+    pairs_lookup = {f'{underlying}{quote}': (underlying, quote) for (underlying, quote) in pairs}
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 99, in <dictcomp>
+    pairs_lookup = {f'{underlying}{quote}': (underlying, quote) for (underlying, quote) in pairs}
+ValueError: too many values to unpack (expected 2)
+22-03-31 17:46:26 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_next_funding_rate at 0x00000245EC450F70>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 99, in get_next_funding_rate
+    pairs_lookup = {f'{underlying}{quote}': (underlying, quote) for (underlying, quote) in pairs}
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 99, in <dictcomp>
+    pairs_lookup = {f'{underlying}{quote}': (underlying, quote) for (underlying, quote) in pairs}
+ValueError: too many values to unpack (expected 2)
+22-03-31 17:46:27 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_next_funding_rate at 0x00000245EC450F70>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 99, in get_next_funding_rate
+    pairs_lookup = {f'{underlying}{quote}': (underlying, quote) for (underlying, quote) in pairs}
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 99, in <dictcomp>
+    pairs_lookup = {f'{underlying}{quote}': (underlying, quote) for (underlying, quote) in pairs}
+ValueError: too many values to unpack (expected 2)
+22-03-31 17:46:29 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_next_funding_rate at 0x00000245EC450F70>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 99, in get_next_funding_rate
+    pairs_lookup = {f'{underlying}{quote}': (underlying, quote) for (underlying, quote) in pairs}
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 99, in <dictcomp>
+    pairs_lookup = {f'{underlying}{quote}': (underlying, quote) for (underlying, quote) in pairs}
+ValueError: too many values to unpack (expected 2)
+22-03-31 17:46:31 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_next_funding_rate at 0x00000245EC450F70>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 99, in get_next_funding_rate
+    pairs_lookup = {f'{underlying}{quote}': (underlying, quote) for (underlying, quote) in pairs}
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 99, in <dictcomp>
+    pairs_lookup = {f'{underlying}{quote}': (underlying, quote) for (underlying, quote) in pairs}
+ValueError: too many values to unpack (expected 2)
+22-03-31 17:46:31 	 CRITICAL 	 utils.py - try5times_wrapper: 	 <function CommsBinance.get_next_funding_rate at 0x00000245EC450F70> failed to work after 5 attempts.
+22-03-31 17:47:14 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_next_funding_rate at 0x0000021B7EF93040>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 112, in get_next_funding_rate
+    'datetime': datetime.fromtimestamp(data_dict['fundingTime']/1000),
+KeyError: 'fundingTime'
+22-03-31 17:47:15 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_next_funding_rate at 0x0000021B7EF93040>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 112, in get_next_funding_rate
+    'datetime': datetime.fromtimestamp(data_dict['fundingTime']/1000),
+KeyError: 'fundingTime'
+22-03-31 17:47:16 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_next_funding_rate at 0x0000021B7EF93040>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 112, in get_next_funding_rate
+    'datetime': datetime.fromtimestamp(data_dict['fundingTime']/1000),
+KeyError: 'fundingTime'
+22-03-31 17:47:18 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_next_funding_rate at 0x0000021B7EF93040>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 112, in get_next_funding_rate
+    'datetime': datetime.fromtimestamp(data_dict['fundingTime']/1000),
+KeyError: 'fundingTime'
+22-03-31 17:47:20 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_next_funding_rate at 0x0000021B7EF93040>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 112, in get_next_funding_rate
+    'datetime': datetime.fromtimestamp(data_dict['fundingTime']/1000),
+KeyError: 'fundingTime'
+22-03-31 17:47:20 	 CRITICAL 	 utils.py - try5times_wrapper: 	 <function CommsBinance.get_next_funding_rate at 0x0000021B7EF93040> failed to work after 5 attempts.
+22-03-31 17:48:37 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_next_funding_rate at 0x0000028A36F51040>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 113, in get_next_funding_rate
+    'underlying': pairs_lookup[pair][0],
+KeyError: 'RAYUSDT'
+22-03-31 17:48:38 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_next_funding_rate at 0x0000028A36F51040>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 113, in get_next_funding_rate
+    'underlying': pairs_lookup[pair][0],
+KeyError: 'RAYUSDT'
+22-03-31 17:48:39 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_next_funding_rate at 0x0000028A36F51040>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 113, in get_next_funding_rate
+    'underlying': pairs_lookup[pair][0],
+KeyError: 'RAYUSDT'
+22-03-31 17:48:41 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_next_funding_rate at 0x0000028A36F51040>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 113, in get_next_funding_rate
+    'underlying': pairs_lookup[pair][0],
+KeyError: 'RAYUSDT'
+22-03-31 17:48:43 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_next_funding_rate at 0x0000028A36F51040>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 113, in get_next_funding_rate
+    'underlying': pairs_lookup[pair][0],
+KeyError: 'RAYUSDT'
+22-03-31 17:48:43 	 CRITICAL 	 utils.py - try5times_wrapper: 	 <function CommsBinance.get_next_funding_rate at 0x0000028A36F51040> failed to work after 5 attempts.
+22-03-31 17:53:56 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_next_funding_rate at 0x0000025A27E71040>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 140, in get_next_funding_rate
+    'datetime': datetime.fromtimestamp(data_dict['fundingTime']/1000),
+KeyError: 'fundingTime'
+22-03-31 17:53:57 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_next_funding_rate at 0x0000025A27E71040>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 140, in get_next_funding_rate
+    'datetime': datetime.fromtimestamp(data_dict['fundingTime']/1000),
+KeyError: 'fundingTime'
+22-03-31 17:53:58 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_next_funding_rate at 0x0000025A27E71040>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 140, in get_next_funding_rate
+    'datetime': datetime.fromtimestamp(data_dict['fundingTime']/1000),
+KeyError: 'fundingTime'
+22-03-31 17:54:01 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_next_funding_rate at 0x0000025A27E71040>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 140, in get_next_funding_rate
+    'datetime': datetime.fromtimestamp(data_dict['fundingTime']/1000),
+KeyError: 'fundingTime'
+22-03-31 17:54:03 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_next_funding_rate at 0x0000025A27E71040>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 140, in get_next_funding_rate
+    'datetime': datetime.fromtimestamp(data_dict['fundingTime']/1000),
+KeyError: 'fundingTime'
+22-03-31 17:54:03 	 CRITICAL 	 utils.py - try5times_wrapper: 	 <function CommsBinance.get_next_funding_rate at 0x0000025A27E71040> failed to work after 5 attempts.
+22-03-31 17:55:40 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_next_funding_rate at 0x000001A335042040>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 145, in get_next_funding_rate
+    funding_rates.append(parsed_dict, ignore_index=True, inplace=True)
+TypeError: append() got an unexpected keyword argument 'inplace'
+22-03-31 17:55:41 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_next_funding_rate at 0x000001A335042040>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 145, in get_next_funding_rate
+    funding_rates.append(parsed_dict, ignore_index=True, inplace=True)
+TypeError: append() got an unexpected keyword argument 'inplace'
+22-03-31 17:55:42 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_next_funding_rate at 0x000001A335042040>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 145, in get_next_funding_rate
+    funding_rates.append(parsed_dict, ignore_index=True, inplace=True)
+TypeError: append() got an unexpected keyword argument 'inplace'
+22-03-31 17:55:45 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_next_funding_rate at 0x000001A335042040>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 145, in get_next_funding_rate
+    funding_rates.append(parsed_dict, ignore_index=True, inplace=True)
+TypeError: append() got an unexpected keyword argument 'inplace'
+22-03-31 17:55:47 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_next_funding_rate at 0x000001A335042040>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 145, in get_next_funding_rate
+    funding_rates.append(parsed_dict, ignore_index=True, inplace=True)
+TypeError: append() got an unexpected keyword argument 'inplace'
+22-03-31 17:55:47 	 CRITICAL 	 utils.py - try5times_wrapper: 	 <function CommsBinance.get_next_funding_rate at 0x000001A335042040> failed to work after 5 attempts.
+22-03-31 21:22:46 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_perp_pairs at 0x00000296CCF654C0>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 43, in get_perp_pairs
+    perp_pairs = perp_pairs.append({
+  File "C:\Users\micha\AppData\Local\Programs\Python\Python38\lib\site-packages\pandas\core\frame.py", line 8927, in append
+    raise TypeError("Can only append a dict if ignore_index=True")
+TypeError: Can only append a dict if ignore_index=True
+22-03-31 21:22:47 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_perp_pairs at 0x00000296CCF654C0>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 43, in get_perp_pairs
+    perp_pairs = perp_pairs.append({
+  File "C:\Users\micha\AppData\Local\Programs\Python\Python38\lib\site-packages\pandas\core\frame.py", line 8927, in append
+    raise TypeError("Can only append a dict if ignore_index=True")
+TypeError: Can only append a dict if ignore_index=True
+22-03-31 21:22:48 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_perp_pairs at 0x00000296CCF654C0>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 43, in get_perp_pairs
+    perp_pairs = perp_pairs.append({
+  File "C:\Users\micha\AppData\Local\Programs\Python\Python38\lib\site-packages\pandas\core\frame.py", line 8927, in append
+    raise TypeError("Can only append a dict if ignore_index=True")
+TypeError: Can only append a dict if ignore_index=True
+22-03-31 21:22:51 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_perp_pairs at 0x00000296CCF654C0>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 43, in get_perp_pairs
+    perp_pairs = perp_pairs.append({
+  File "C:\Users\micha\AppData\Local\Programs\Python\Python38\lib\site-packages\pandas\core\frame.py", line 8927, in append
+    raise TypeError("Can only append a dict if ignore_index=True")
+TypeError: Can only append a dict if ignore_index=True
+22-03-31 21:22:53 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_perp_pairs at 0x00000296CCF654C0>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 43, in get_perp_pairs
+    perp_pairs = perp_pairs.append({
+  File "C:\Users\micha\AppData\Local\Programs\Python\Python38\lib\site-packages\pandas\core\frame.py", line 8927, in append
+    raise TypeError("Can only append a dict if ignore_index=True")
+TypeError: Can only append a dict if ignore_index=True
+22-03-31 21:22:53 	 CRITICAL 	 utils.py - try5times_wrapper: 	 <function CommsBinance.get_perp_pairs at 0x00000296CCF654C0> failed to work after 5 attempts.
+22-03-31 21:22:54 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_perp_pairs at 0x00000296CCF654C0>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 43, in get_perp_pairs
+    perp_pairs = perp_pairs.append({
+  File "C:\Users\micha\AppData\Local\Programs\Python\Python38\lib\site-packages\pandas\core\frame.py", line 8927, in append
+    raise TypeError("Can only append a dict if ignore_index=True")
+TypeError: Can only append a dict if ignore_index=True
+22-03-31 21:22:55 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_perp_pairs at 0x00000296CCF654C0>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 43, in get_perp_pairs
+    perp_pairs = perp_pairs.append({
+  File "C:\Users\micha\AppData\Local\Programs\Python\Python38\lib\site-packages\pandas\core\frame.py", line 8927, in append
+    raise TypeError("Can only append a dict if ignore_index=True")
+TypeError: Can only append a dict if ignore_index=True
+22-03-31 21:22:57 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_perp_pairs at 0x00000296CCF654C0>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 43, in get_perp_pairs
+    perp_pairs = perp_pairs.append({
+  File "C:\Users\micha\AppData\Local\Programs\Python\Python38\lib\site-packages\pandas\core\frame.py", line 8927, in append
+    raise TypeError("Can only append a dict if ignore_index=True")
+TypeError: Can only append a dict if ignore_index=True
+22-03-31 21:23:00 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_perp_pairs at 0x00000296CCF654C0>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 43, in get_perp_pairs
+    perp_pairs = perp_pairs.append({
+  File "C:\Users\micha\AppData\Local\Programs\Python\Python38\lib\site-packages\pandas\core\frame.py", line 8927, in append
+    raise TypeError("Can only append a dict if ignore_index=True")
+TypeError: Can only append a dict if ignore_index=True
+22-03-31 21:23:02 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_perp_pairs at 0x00000296CCF654C0>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 43, in get_perp_pairs
+    perp_pairs = perp_pairs.append({
+  File "C:\Users\micha\AppData\Local\Programs\Python\Python38\lib\site-packages\pandas\core\frame.py", line 8927, in append
+    raise TypeError("Can only append a dict if ignore_index=True")
+TypeError: Can only append a dict if ignore_index=True
+22-03-31 21:23:02 	 CRITICAL 	 utils.py - try5times_wrapper: 	 <function CommsBinance.get_perp_pairs at 0x00000296CCF654C0> failed to work after 5 attempts.
+22-03-31 21:23:03 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_perp_pairs at 0x00000296CCF654C0>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 43, in get_perp_pairs
+    perp_pairs = perp_pairs.append({
+  File "C:\Users\micha\AppData\Local\Programs\Python\Python38\lib\site-packages\pandas\core\frame.py", line 8927, in append
+    raise TypeError("Can only append a dict if ignore_index=True")
+TypeError: Can only append a dict if ignore_index=True
+22-03-31 21:23:04 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_perp_pairs at 0x00000296CCF654C0>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 43, in get_perp_pairs
+    perp_pairs = perp_pairs.append({
+  File "C:\Users\micha\AppData\Local\Programs\Python\Python38\lib\site-packages\pandas\core\frame.py", line 8927, in append
+    raise TypeError("Can only append a dict if ignore_index=True")
+TypeError: Can only append a dict if ignore_index=True
+22-03-31 21:23:05 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_perp_pairs at 0x00000296CCF654C0>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 43, in get_perp_pairs
+    perp_pairs = perp_pairs.append({
+  File "C:\Users\micha\AppData\Local\Programs\Python\Python38\lib\site-packages\pandas\core\frame.py", line 8927, in append
+    raise TypeError("Can only append a dict if ignore_index=True")
+TypeError: Can only append a dict if ignore_index=True
+22-03-31 21:23:08 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_perp_pairs at 0x00000296CCF654C0>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 43, in get_perp_pairs
+    perp_pairs = perp_pairs.append({
+  File "C:\Users\micha\AppData\Local\Programs\Python\Python38\lib\site-packages\pandas\core\frame.py", line 8927, in append
+    raise TypeError("Can only append a dict if ignore_index=True")
+TypeError: Can only append a dict if ignore_index=True
+22-03-31 21:23:10 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_perp_pairs at 0x00000296CCF654C0>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 43, in get_perp_pairs
+    perp_pairs = perp_pairs.append({
+  File "C:\Users\micha\AppData\Local\Programs\Python\Python38\lib\site-packages\pandas\core\frame.py", line 8927, in append
+    raise TypeError("Can only append a dict if ignore_index=True")
+TypeError: Can only append a dict if ignore_index=True
+22-03-31 21:23:10 	 CRITICAL 	 utils.py - try5times_wrapper: 	 <function CommsBinance.get_perp_pairs at 0x00000296CCF654C0> failed to work after 5 attempts.
+22-03-31 21:23:12 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_perp_pairs at 0x00000296CCF654C0>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 43, in get_perp_pairs
+    perp_pairs = perp_pairs.append({
+  File "C:\Users\micha\AppData\Local\Programs\Python\Python38\lib\site-packages\pandas\core\frame.py", line 8927, in append
+    raise TypeError("Can only append a dict if ignore_index=True")
+TypeError: Can only append a dict if ignore_index=True
+22-03-31 21:23:13 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_perp_pairs at 0x00000296CCF654C0>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 43, in get_perp_pairs
+    perp_pairs = perp_pairs.append({
+  File "C:\Users\micha\AppData\Local\Programs\Python\Python38\lib\site-packages\pandas\core\frame.py", line 8927, in append
+    raise TypeError("Can only append a dict if ignore_index=True")
+TypeError: Can only append a dict if ignore_index=True
+22-03-31 21:23:15 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_perp_pairs at 0x00000296CCF654C0>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 43, in get_perp_pairs
+    perp_pairs = perp_pairs.append({
+  File "C:\Users\micha\AppData\Local\Programs\Python\Python38\lib\site-packages\pandas\core\frame.py", line 8927, in append
+    raise TypeError("Can only append a dict if ignore_index=True")
+TypeError: Can only append a dict if ignore_index=True
+22-03-31 21:23:17 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_perp_pairs at 0x00000296CCF654C0>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 43, in get_perp_pairs
+    perp_pairs = perp_pairs.append({
+  File "C:\Users\micha\AppData\Local\Programs\Python\Python38\lib\site-packages\pandas\core\frame.py", line 8927, in append
+    raise TypeError("Can only append a dict if ignore_index=True")
+TypeError: Can only append a dict if ignore_index=True
+22-03-31 21:23:20 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_perp_pairs at 0x00000296CCF654C0>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 43, in get_perp_pairs
+    perp_pairs = perp_pairs.append({
+  File "C:\Users\micha\AppData\Local\Programs\Python\Python38\lib\site-packages\pandas\core\frame.py", line 8927, in append
+    raise TypeError("Can only append a dict if ignore_index=True")
+TypeError: Can only append a dict if ignore_index=True
+22-03-31 21:23:20 	 CRITICAL 	 utils.py - try5times_wrapper: 	 <function CommsBinance.get_perp_pairs at 0x00000296CCF654C0> failed to work after 5 attempts.
+22-03-31 21:23:51 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_perp_pairs at 0x00000161CBA04550>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 43, in get_perp_pairs
+    perp_pairs = perp_pairs.append({
+  File "C:\Users\micha\AppData\Local\Programs\Python\Python38\lib\site-packages\pandas\core\frame.py", line 8927, in append
+    raise TypeError("Can only append a dict if ignore_index=True")
+TypeError: Can only append a dict if ignore_index=True
+22-03-31 21:23:52 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_perp_pairs at 0x00000161CBA04550>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 43, in get_perp_pairs
+    perp_pairs = perp_pairs.append({
+  File "C:\Users\micha\AppData\Local\Programs\Python\Python38\lib\site-packages\pandas\core\frame.py", line 8927, in append
+    raise TypeError("Can only append a dict if ignore_index=True")
+TypeError: Can only append a dict if ignore_index=True
+22-03-31 21:23:53 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_perp_pairs at 0x00000161CBA04550>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 43, in get_perp_pairs
+    perp_pairs = perp_pairs.append({
+  File "C:\Users\micha\AppData\Local\Programs\Python\Python38\lib\site-packages\pandas\core\frame.py", line 8927, in append
+    raise TypeError("Can only append a dict if ignore_index=True")
+TypeError: Can only append a dict if ignore_index=True
+22-03-31 21:23:55 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_perp_pairs at 0x00000161CBA04550>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 43, in get_perp_pairs
+    perp_pairs = perp_pairs.append({
+  File "C:\Users\micha\AppData\Local\Programs\Python\Python38\lib\site-packages\pandas\core\frame.py", line 8927, in append
+    raise TypeError("Can only append a dict if ignore_index=True")
+TypeError: Can only append a dict if ignore_index=True
+22-03-31 21:23:58 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_perp_pairs at 0x00000161CBA04550>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 43, in get_perp_pairs
+    perp_pairs = perp_pairs.append({
+  File "C:\Users\micha\AppData\Local\Programs\Python\Python38\lib\site-packages\pandas\core\frame.py", line 8927, in append
+    raise TypeError("Can only append a dict if ignore_index=True")
+TypeError: Can only append a dict if ignore_index=True
+22-03-31 21:23:58 	 CRITICAL 	 utils.py - try5times_wrapper: 	 <function CommsBinance.get_perp_pairs at 0x00000161CBA04550> failed to work after 5 attempts.
+22-03-31 21:50:13 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_next_funding_rate at 0x000001FBBDFE34C0>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+TypeError: get_next_funding_rate() missing 1 required positional argument: 'pairs'
+22-03-31 21:50:13 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_next_funding_rate at 0x000001FBBDFE34C0>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+TypeError: get_next_funding_rate() missing 1 required positional argument: 'pairs'
+22-03-31 21:50:14 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_next_funding_rate at 0x000001FBBDFE34C0>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+TypeError: get_next_funding_rate() missing 1 required positional argument: 'pairs'
+22-03-31 21:50:16 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_next_funding_rate at 0x000001FBBDFE34C0>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+TypeError: get_next_funding_rate() missing 1 required positional argument: 'pairs'
+22-03-31 21:50:18 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_next_funding_rate at 0x000001FBBDFE34C0>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+TypeError: get_next_funding_rate() missing 1 required positional argument: 'pairs'
+22-03-31 21:50:18 	 CRITICAL 	 utils.py - try5times_wrapper: 	 <function CommsBinance.get_next_funding_rate at 0x000001FBBDFE34C0> failed to work after 5 attempts.
+22-03-31 21:59:52 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_next_funding_rate at 0x00000153D83944C0>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 87, in get_next_funding_rate
+    pairs_lookup = {f'{underlying}{quote}': (underlying, quote) for (underlying, quote) in pairs}
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 87, in <dictcomp>
+    pairs_lookup = {f'{underlying}{quote}': (underlying, quote) for (underlying, quote) in pairs}
+ValueError: too many values to unpack (expected 2)
+22-03-31 21:59:53 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_next_funding_rate at 0x00000153D83944C0>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 87, in get_next_funding_rate
+    pairs_lookup = {f'{underlying}{quote}': (underlying, quote) for (underlying, quote) in pairs}
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 87, in <dictcomp>
+    pairs_lookup = {f'{underlying}{quote}': (underlying, quote) for (underlying, quote) in pairs}
+ValueError: too many values to unpack (expected 2)
+22-03-31 21:59:53 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_next_funding_rate at 0x00000153D83944C0>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 87, in get_next_funding_rate
+    pairs_lookup = {f'{underlying}{quote}': (underlying, quote) for (underlying, quote) in pairs}
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 87, in <dictcomp>
+    pairs_lookup = {f'{underlying}{quote}': (underlying, quote) for (underlying, quote) in pairs}
+ValueError: too many values to unpack (expected 2)
+22-03-31 21:59:55 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_next_funding_rate at 0x00000153D83944C0>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 87, in get_next_funding_rate
+    pairs_lookup = {f'{underlying}{quote}': (underlying, quote) for (underlying, quote) in pairs}
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 87, in <dictcomp>
+    pairs_lookup = {f'{underlying}{quote}': (underlying, quote) for (underlying, quote) in pairs}
+ValueError: too many values to unpack (expected 2)
+22-03-31 21:59:57 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsBinance.get_next_funding_rate at 0x00000153D83944C0>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 87, in get_next_funding_rate
+    pairs_lookup = {f'{underlying}{quote}': (underlying, quote) for (underlying, quote) in pairs}
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_binance.py", line 87, in <dictcomp>
+    pairs_lookup = {f'{underlying}{quote}': (underlying, quote) for (underlying, quote) in pairs}
+ValueError: too many values to unpack (expected 2)
+22-03-31 21:59:57 	 CRITICAL 	 utils.py - try5times_wrapper: 	 <function CommsBinance.get_next_funding_rate at 0x00000153D83944C0> failed to work after 5 attempts.

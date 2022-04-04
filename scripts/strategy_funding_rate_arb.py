@@ -4,85 +4,9 @@ from datetime import datetime
 import pandas as pd
 
 
-class CommsFundingRates:
-    '''
-    Use this class to load (and save) funding rates from online data.
-    Is an alternative to Class: LocalDataHandler.
-    '''
-
-    def __init__(self):
-        pass
 
 
-    def get_funding_rate(self, symbols: List[str], dt: datetime):
-        pass
-
-
-    def get_borrow_rate(self, symbols: List[str], dt: datetime):
-        pass
-
-
-    def get_historical_funding_rate(self, symbols: List[str], since: datetime):
-        '''
-        NEED TO DECIDE HOW TO FIND THE TIMESTAMP STEP AMOUNT + THE EXCHANGES AVAILABLE
-        '''
-        ## Parse Input Data
-        times = [since]  # Create list of datetime steps
-        since_epoch = int(since.timestamp())  # Parse datetime to epoch
-
-        ## Get Exchange Classes
-        # exchanges = {exchange: getattr(ccxt, exchange) for exchange in ccxt.exchanges}
-        exchanges = {exchange: getattr(ccxt, exchange)() for exchange in ['binance', 'okex', 'ftx']}
-
-        ## Make Output Dict
-        rate = None  # only used as an example of fund_rates data layout
-        funding_rates = {time: {exchange: {symbol: rate}} for symbol in symbols for exchange in exchanges for time in times}
-
-        ## Query and Sort Funding Rates
-        for exchange, exchange_class in exchanges.items():
-            x = {k: v for k,v in exchange_class.load_markets().items() if v.get('future', None) is True or v.get('linear', None) is True or v.get('inverse', None) is True or v.get('swap', None) is True}
-            y = 1
-            # for symbol in symbols:
-            #     rate_dicts = exchange_class.fetch_funding_history(symbol=symbol, since=since_epoch, limit=None)
-            #     # fetch_funding_rate
-            #     # fetch_funding_rates
-            #     # fetch_funding_fee
-            #     # fetch_funding_fees
-            #     for rate_dict in rate_dicts:
-            #         timestamp = rate_dict['timestamp']
-            #         funding_rates[timestamp][exchange][symbol] = rate_dict['fundingRate']
-        return funding_rates
-
-
-    def get_historical_borrow_rate(self, symbols: List[str], start: datetime, end: datetime):
-        pass
-
-
-
-class LocalDataHandler:
-    '''
-    Use this class to load funding rates from local data files.
-    Is an alternative to Class: CommsFundingRates.
-    '''
-
-    def __init__(self):
-        pass
-
-    def save_funding_rates(df: pd.DataFrame):
-        pass
-
-    def save_borrow_rates(df: pd.DataFrame):
-        pass
-
-    def load_funding_rates(symbols: List[str], start: datetime, end: datetime):
-        pass
-
-    def load_borrow_rates(symbols: List[str], start: datetime, end: datetime):
-        pass
-
-
-
-class FundingRatesStrategy:
+class StrategyFundingRateArb:
     '''
     Trade:
         - Funding rate on one side of the trade > cost to hedge the other side of the trade
@@ -274,4 +198,4 @@ class FundingRatesStrategy:
 
 
 if __name__ == "__main__":
-    CommsFundingRates().get_historical_funding_rate(symbols=['BTC', 'ETH'], since=datetime(2020,1,1))
+    StrategyFundingRateArb().strategy()

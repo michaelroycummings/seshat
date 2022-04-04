@@ -146,3 +146,40 @@ Traceback (most recent call last):
     data = response['result']
 KeyError: 'result'
 22-03-24 00:13:39 	 CRITICAL 	 utils.py - try5times_wrapper: 	 <function CommsFTX.get_historical_funding_rates at 0x000002815B9A30D0> failed to work after 5 attempts.
+22-03-31 19:48:36 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsFTX.get_next_funding_rate at 0x000002293E50F3A0>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_ftx.py", line 90, in get_next_funding_rate
+    'datetime': datetime.fromtimestamp(data['fundingTime']/1000),
+KeyError: 'fundingTime'
+22-03-31 19:48:37 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsFTX.get_next_funding_rate at 0x000002293E50F3A0>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_ftx.py", line 90, in get_next_funding_rate
+    'datetime': datetime.fromtimestamp(data['fundingTime']/1000),
+KeyError: 'fundingTime'
+22-03-31 19:48:38 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsFTX.get_next_funding_rate at 0x000002293E50F3A0>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_ftx.py", line 90, in get_next_funding_rate
+    'datetime': datetime.fromtimestamp(data['fundingTime']/1000),
+KeyError: 'fundingTime'
+22-03-31 19:48:40 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsFTX.get_next_funding_rate at 0x000002293E50F3A0>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_ftx.py", line 90, in get_next_funding_rate
+    'datetime': datetime.fromtimestamp(data['fundingTime']/1000),
+KeyError: 'fundingTime'
+22-03-31 19:48:44 	 ERROR 	 utils.py - try5times_wrapper: 	 Error found when running <function CommsFTX.get_next_funding_rate at 0x000002293E50F3A0>.
+Traceback (most recent call last):
+  File "C:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\utils.py", line 14, in try5times_wrapper
+    return function(self, *args, **kwargs)
+  File "c:\Users\micha\Documents\XXX Capital Management\Code\new_crypto_program\scripts\comms_ftx.py", line 90, in get_next_funding_rate
+    'datetime': datetime.fromtimestamp(data['fundingTime']/1000),
+KeyError: 'fundingTime'
+22-03-31 19:48:44 	 CRITICAL 	 utils.py - try5times_wrapper: 	 <function CommsFTX.get_next_funding_rate at 0x000002293E50F3A0> failed to work after 5 attempts.
+22-03-31 19:51:58 	 DEBUG 	 comms_ftx.py - get_historical_funding_rates: 	 Bybit does not have funding rates for pair "BOOPEDOOPUSD".
