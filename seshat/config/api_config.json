@@ -1,0 +1,22 @@
+{
+    "binance": {
+        "api_key": "",
+        "private_key": ""
+    },
+    "ftx": {
+        "api_key": "",
+        "private_key": ""
+    },
+    "huobi": {
+        "api_key": "",
+        "private_key": ""
+    },
+    "okx": {
+        "api_key": "",
+        "private_key": ""
+    },
+    "bybit": {
+        "api_key": "",
+        "private_key": ""
+    }
+}

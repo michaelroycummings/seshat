@@ -1,0 +1,29 @@
+{
+    "MyLogger": {
+        "": ""
+    },
+    "CommsBinance": {
+        "log_file_name": "Log_CommsBinance.log"
+    },
+    "CommsFTX": {
+        "log_file_name": "Log_CommsFTX.log"
+    },
+    "CommsHuobi": {
+        "log_file_name": "Log_CommsHuobi.log"
+    },
+    "CommsBybit": {
+        "log_file_name": "Log_CommsBybit.log"
+    },
+    "CommsOKX": {
+        "log_file_name": "Log_CommsOKX.log"
+    },
+    "ReportFundingRates": {
+        "log_file_name": "Log_ReportFundingRates.log"
+    },
+    "ReportBorrowRates": {
+        "log_file_name": "Log_ReportBorrowRates.log"
+    },
+    "ReportPrices": {
+        "log_file_name": "Log_ReportPrices.log"
+    }
+}
